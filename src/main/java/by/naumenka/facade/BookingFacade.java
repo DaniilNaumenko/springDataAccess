@@ -1,11 +1,9 @@
 package by.naumenka.facade;
 
 import by.naumenka.exception.UserNotFoundException;
-import by.naumenka.model.Category;
-import by.naumenka.model.Event;
-import by.naumenka.model.Ticket;
-import by.naumenka.model.User;
+import by.naumenka.model.*;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -152,4 +150,35 @@ public interface BookingFacade {
 
     List<Ticket> getAllTickets();
 
+    /**
+     * Creates new User Account
+     *
+     * @param userAccount UserAccount data.
+     * @return Created UserAccount object.
+     */
+    UserAccount createUserAccount(UserAccount userAccount);
+
+    /**
+     * Gets User Account by its id.
+     *
+     * @return UserAccount.
+     */
+    UserAccount getUserAccountById(long id);
+
+    /**
+     * Gets User Account by user id.
+     *
+     * @return UserAccount.
+     */
+    UserAccount getUserAccountByUserId(long userId);
+
+    /**
+     * Top up a User Account
+     *
+     * @param userId User id
+     * @param money  Amount of money to top up into account.
+     *
+     * @return UserAccount.
+     */
+    UserAccount topUpUserAccount(long userId, BigDecimal money);
 }
