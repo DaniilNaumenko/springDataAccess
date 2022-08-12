@@ -28,3 +28,4 @@ create table users_accounts
     user_id integer references users (id) unique,
     money   decimal
 );
+
